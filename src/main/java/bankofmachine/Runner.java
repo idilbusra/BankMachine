@@ -2,7 +2,7 @@ package bankofmachine;
 
 public class Runner {
     public static void main(String[] args) {
-            Atm atm = new Atm();
+            BankOfMachine atm = new BankOfMachine();
 
             atm.sifreGir();
             atm.start();
