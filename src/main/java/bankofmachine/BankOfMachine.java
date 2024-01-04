@@ -15,17 +15,18 @@ public class BankOfMachine{
     double para;
     Scanner input = new Scanner(System.in);
     int secenek;
-    String pwd = "123a";
-    String userPwd;
+    String password = "123a";
+    String kullaniciSifresi;
 
     public void sifreGir(){
 
-        System.out.println("lutfen sifrenizi giriniz");
-        userPwd = input.nextLine();
-        if(userPwd.equals(pwd)){
-            System.out.println("giris basarili");
+        System.out.println("Lutfen sifrenizi girin");
+        kullaniciSifresi = input.nextLine();
+
+        if(kullaniciSifresi.equals(password)){
+            System.out.println("Giris basarili");
         }else {
-            System.out.println("yanlis giris tekrar deneyiniz");
+            System.out.println("Yanlis giris, tekrar deneyin");
             sifreGir();
         }
 
@@ -34,13 +35,13 @@ public class BankOfMachine{
 
 
     public void bakiyeOgren(){
-        System.out.println("bakiyeniz : " + bakiye);
+        System.out.println("Bakiyeniz : " + bakiye);
         start();
 
     }
 
     public double paraYatir(){
-        System.out.println("yatirmak istediginiz miktari giriniz");
+        System.out.println("Yatirmak istediginiz miktari giriniz");
         para = input.nextDouble();
         bakiye = bakiye + para;
         start();
@@ -55,7 +56,7 @@ public class BankOfMachine{
             bakiye = bakiye - para;
             start();
         } else{
-            System.out.println("bakiyeniz yetersiz..");
+            System.out.println("Yetersiz Bakiye");
             paraCek();
 
         }
@@ -65,15 +66,15 @@ public class BankOfMachine{
     }
 
     public void cik(){
-        System.out.println("bizi tercih ettiginiz icin tesekkur ederiz..");
+        System.out.println("Bizi tercih ettiginiz icin tesekkurler");
 
     }
 
     public void start(){
         System.out.println( "Para yatirmak icin     1\n" +
-                "para cekmek icin       2\n" +
-                "bakiye ogrenmek icin   3\n" +
-                "cikis icin             4\n" +
+                "Para cekmek icin       2\n" +
+                "Bakiye ogrenmek icin   3\n" +
+                "Cikis icin             4\n" +
                 "tuslayiniz");
 
         secenek = input.nextInt();
@@ -92,7 +93,7 @@ public class BankOfMachine{
                 cik();
                 break;
             default:
-                System.out.println("hatali giris. lutfen uygun senek giriniz..");
+                System.out.println("Hatali giris, lutfen uygun secenegi giriniz");
         }
 
 
